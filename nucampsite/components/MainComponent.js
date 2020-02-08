@@ -28,6 +28,7 @@ const DirectoryNavigator = createStackNavigator(
     }
 );
 
+//Home 
 const HomeNavigator = createStackNavigator(
     {
         Home: { screen: Home }
@@ -45,6 +46,7 @@ const HomeNavigator = createStackNavigator(
     }
 );
 
+//About
 const AboutNavigator = createStackNavigator(
     {
         About: { screen: About }
@@ -62,7 +64,8 @@ const AboutNavigator = createStackNavigator(
     }
 );
 
-const CopntactNavigator = createStackNavigator(
+//Contact
+const ContactNavigator = createStackNavigator(
     {
         Contact: { screen: Contact }
     },
@@ -80,13 +83,13 @@ const CopntactNavigator = createStackNavigator(
 );
 
 
-
+//Main
 const MainNavigator = createDrawerNavigator(
     {
         Home: { screen: HomeNavigator },
         Directory: { screen: DirectoryNavigator },
         About: { screen: AboutNavigator },
-        Contact: { screen: CopntactNavigator }
+        Contact: { screen: ContactNavigator }
 
     },
     {
