@@ -3,7 +3,7 @@ import Main from './components/MainComponent';
 import { Provider } from 'react-redux';
 import { ConfigureStore } from './redux/configureStore';
 
-const Store = ConfigureStore();
+const store = ConfigureStore();
 
 export default function App() {
     return (
@@ -12,4 +12,4 @@ export default function App() {
         </Provider>
     );
 }
-// console.disableYellowBox = true;
+console.disableYellowBox = true;

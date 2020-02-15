@@ -35,7 +35,8 @@ npm manifest:
       "react-native-web": "~0.11.7",
       "react-navigation": "2.0.1",
       "react-redux": "5.0.7",
-      "redux": "4.0.0"
+      "redux": "4.0.0",
+      "redux-logger": "3.0.6"
     },
     "devDependencies": {
       "@babel/core": "^7.0.0",
@@ -2049,6 +2050,11 @@ Lockfile:
     integrity sha512-YX2i9XjJ7h5q/aQ/IM9PEwEnDqETAIYbggmdDB3HLTlSgo1CxPsj6pvhPG68rq6SVE0+p+6Ywsm5fTYNrYtBWw==
     dependencies:
       is-obj "^1.0.0"
+  
+  deep-diff@^0.3.5:
+    version "0.3.8"
+    resolved "https://registry.yarnpkg.com/deep-diff/-/deep-diff-0.3.8.tgz#c01de63efb0eec9798801d40c7e0dae25b582c84"
+    integrity sha1-wB3mPvsO7JeYgB1Ax+Da4ltYLIQ=
   
   deepmerge@^3.1.0, deepmerge@^3.2.0:
     version "3.3.0"
@@ -4482,6 +4488,13 @@ Lockfile:
       safe-buffer "~5.1.1"
       string_decoder "~1.1.1"
       util-deprecate "~1.0.1"
+  
+  redux-logger@3.0.6:
+    version "3.0.6"
+    resolved "https://registry.yarnpkg.com/redux-logger/-/redux-logger-3.0.6.tgz#f7555966f3098f3c88604c449cf0baf5778274bf"
+    integrity sha1-91VZZvMJjzyIYExEnPC69XeCdL8=
+    dependencies:
+      deep-diff "^0.3.5"
   
   redux@4.0.0:
     version "4.0.0"
