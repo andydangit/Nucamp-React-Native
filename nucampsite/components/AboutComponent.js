@@ -27,7 +27,7 @@ function Mission({}) {
 
 class About extends Component {
 
-   
+
     static navigationOptions  = {
         title: "About Us"
     }
