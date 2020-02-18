@@ -5,6 +5,7 @@ import CampsiteInfo from './CampsiteInfoComponent';
 import About from './AboutComponent';
 import Contact from './ContactComponent';
 import Reservation from './ReservationComponent';
+import Favorites from './FavoritesComponent';
 import { View, Platform, StyleSheet, Text, ScrollView, Image } from 'react-native';
 import { createStackNavigator, createDrawerNavigator, DrawerItems } from 'react-navigation';
 import { Icon } from 'react-native-elements';
@@ -50,7 +51,7 @@ const DirectoryNavigator = createStackNavigator(
     }
 );
 
-//Home 
+//Home Navigator 
 const HomeNavigator = createStackNavigator(
     {
         Home: { screen: Home }
@@ -74,7 +75,7 @@ const HomeNavigator = createStackNavigator(
     }
 );
 
-//About
+//About Navigator 
 const AboutNavigator = createStackNavigator(
     {
         About: { screen: About }
@@ -98,7 +99,7 @@ const AboutNavigator = createStackNavigator(
     }
 );
 
-//Contact
+//Contact Navigator 
 const ContactNavigator = createStackNavigator(
     {
         Contact: { screen: Contact }
@@ -122,7 +123,7 @@ const ContactNavigator = createStackNavigator(
     }
 );
 
-//Reservation
+//Reservation Navigator 
 const ReservationNavigator = createStackNavigator(
     {
         Reservation: { screen: Reservation }
@@ -146,6 +147,29 @@ const ReservationNavigator = createStackNavigator(
     }
 );
 
+//Favorites Navigator 
+const FavoritesNavigator = createStackNavigator(
+    {
+        Favorites: { screen: Favorites }
+    },
+    {
+        navigationOptions: ({navigation}) => ({
+            headerStyle: {
+                backgroundColor: '#5637DD'
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+                color: '#fff'
+            },
+            headerLeft: <Icon
+                name='heart'
+                type='font-awesome'
+                iconStyle={styles.stackIcon}
+                onPress={() => navigation.toggleDrawer()}
+            />
+        })
+    }
+);
 
 //Drawer Content
 const CustomDrawerContentComponent = props => (
@@ -204,6 +228,21 @@ const MainNavigator = createDrawerNavigator(
                 drawerIcon: ({tintColor}) => (
                     <Icon
                         name='tree'
+                        type='font-awesome'
+                        size={24}
+                        color={tintColor}
+                    />
+                )
+            }
+        },
+
+        Favorites: {
+            screen: FavoritesNavigator,
+            navigationOptions: {
+                drawerLabel: 'My Favorites',
+                drawerIcon: ({tintColor}) => (
+                    <Icon
+                        name='heart'
                         type='font-awesome'
                         size={24}
                         color={tintColor}
